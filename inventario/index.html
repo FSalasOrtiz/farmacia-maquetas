@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventario · Maqueta Farmacia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    body { background: #f4f6f8; }
+    .sidebar { width: 230px; min-height: 100vh; background: #12343b; }
+    .sidebar a { color: #cfe3e6; text-decoration: none; display: block; padding: .55rem 1rem; border-radius: .4rem; }
+    .sidebar a:hover { background: #1c4a53; color: #fff; }
+    .sidebar a.active { background: #2d8a7e; color: #fff; font-weight: 600; }
+    .mock-banner { background: repeating-linear-gradient(45deg,#ffe8a3,#ffe8a3 12px,#fff3c9 12px,#fff3c9 24px); }
+    .text-bg-orange { background: #fd7e14; color: #fff; }
+    .kpi { border: 0; border-left: 4px solid var(--bs-primary); }
+    .table td, .table th { vertical-align: middle; }
+    @media (max-width: 768px) { .sidebar { width: 100%; min-height: auto; } }
+  </style>
+</head>
+<body>
+<div class="mock-banner text-center small fw-semibold py-1 border-bottom">
+  <i class="bi bi-cone-striped"></i> MAQUETA — datos ficticios, sin backend. Ninguna acción guarda información, emite documentos ni procesa pagos.
+</div>
+<div class="d-md-flex">
+  <nav class="sidebar p-2 flex-shrink-0">
+    <div class="text-white fw-bold px-3 py-3"><i class="bi bi-capsule-pill"></i> Farmacia</div>
+    
+      <a href="../inicio/"
+         class=""><i class="bi bi-house me-2"></i>Inicio</a>
+    
+      <a href="../pos/"
+         class=""><i class="bi bi-cart me-2"></i>POS / Caja</a>
+    
+      <a href="../ventas/"
+         class=""><i class="bi bi-receipt me-2"></i>Ventas</a>
+    
+      <a href="../catalogo/"
+         class=""><i class="bi bi-capsule me-2"></i>Catálogo</a>
+    
+      <a href="../inventario/"
+         class="active"><i class="bi bi-box-seam me-2"></i>Inventario</a>
+    
+      <a href="../compras/"
+         class=""><i class="bi bi-truck me-2"></i>Compras</a>
+    
+      <a href="../recetas/"
+         class=""><i class="bi bi-file-medical me-2"></i>Recetas</a>
+    
+      <a href="../devoluciones/"
+         class=""><i class="bi bi-arrow-return-left me-2"></i>Devoluciones</a>
+    
+      <a href="../transferencias/"
+         class=""><i class="bi bi-arrow-left-right me-2"></i>Transferencias</a>
+    
+      <a href="../caja/"
+         class=""><i class="bi bi-cash-stack me-2"></i>Caja y turnos</a>
+    
+      <a href="../convenios/"
+         class=""><i class="bi bi-people me-2"></i>Convenios</a>
+    
+      <a href="../reportes/"
+         class=""><i class="bi bi-bar-chart me-2"></i>Reportes</a>
+    
+      <a href="../administracion/"
+         class=""><i class="bi bi-gear me-2"></i>Administración</a>
+    
+    <hr class="border-secondary">
+    <a href="../login/"><i class="bi bi-box-arrow-right me-2"></i>Cerrar sesión</a>
+  </nav>
+  <div class="flex-grow-1">
+    <header class="bg-white border-bottom px-4 py-2 d-flex justify-content-between align-items-center">
+      <h1 class="h5 mb-0">Inventario</h1>
+      <div class="small text-muted">
+        <i class="bi bi-shop"></i> Sucursal Demo Centro · <i class="bi bi-person-circle"></i> Cajero Demo (Cajero)
+      </div>
+    </header>
+    <main class="p-4">
+<ul class="nav nav-tabs mb-3" role="tablist">
+  <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#t-lots">Stock por lote</button></li>
+  <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t-kardex">Movimientos (kardex)</button></li>
+  <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t-adjust">Ajuste / conteo</button></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="t-lots">
+    <div class="d-flex gap-2 mb-2 small">
+      <span class="badge text-bg-danger">≤30 días</span><span class="badge text-bg-warning">≤90 días</span><span class="text-muted">Orden FEFO: primero vence, primero sale.</span>
+    </div>
+    <div class="card shadow-sm"><div class="table-responsive"><table class="table mb-0">
+      <thead class="table-light"><tr><th>Producto</th><th>Lote</th><th>Vencimiento</th><th>Ubicación</th><th class="text-end">Cantidad</th><th>Estado</th><th></th></tr></thead>
+      <tbody><tr class="">
+        <td>Paracetamol Demo 500 mg</td><td>L-A101</td>
+        <td>2026-12-15 <span class="small text-muted">(52 d)</span></td>
+        <td>Sala de ventas</td><td class="text-end">12</td><td><span class="badge text-bg-success">Disponible</span>
+
+</td>
+        <td><div class="dropdown"><button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Acción</button>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Enviar a cuarentena</a></li><li><a class="dropdown-item" href="#">Marcar retiro de mercado</a></li><li><a class="dropdown-item" href="#">Transferir</a></li></ul></div></td>
+      </tr><tr class="">
+        <td>Paracetamol Demo 500 mg</td><td>L-A145</td>
+        <td>2027-08-30 <span class="small text-muted">(310 d)</span></td>
+        <td>Sala de ventas</td><td class="text-end">30</td><td><span class="badge text-bg-success">Disponible</span>
+
+</td>
+        <td><div class="dropdown"><button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Acción</button>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Enviar a cuarentena</a></li><li><a class="dropdown-item" href="#">Marcar retiro de mercado</a></li><li><a class="dropdown-item" href="#">Transferir</a></li></ul></div></td>
+      </tr><tr class="">
+        <td>Ibuprofeno Demo 400 mg</td><td>L-B220</td>
+        <td>2027-02-01 <span class="small text-muted">(100 d)</span></td>
+        <td>Sala de ventas</td><td class="text-end">3</td><td><span class="badge text-bg-success">Disponible</span>
+
+</td>
+        <td><div class="dropdown"><button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Acción</button>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Enviar a cuarentena</a></li><li><a class="dropdown-item" href="#">Marcar retiro de mercado</a></li><li><a class="dropdown-item" href="#">Transferir</a></li></ul></div></td>
+      </tr><tr class="table-warning">
+        <td>Amoxicilina Demo 500 mg</td><td>L-A330</td>
+        <td>2026-11-20 <span class="small text-muted">(27 d)</span></td>
+        <td>Bodega</td><td class="text-end">18</td><td><span class="badge text-bg-success">Disponible</span>
+
+</td>
+        <td><div class="dropdown"><button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Acción</button>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Enviar a cuarentena</a></li><li><a class="dropdown-item" href="#">Marcar retiro de mercado</a></li><li><a class="dropdown-item" href="#">Transferir</a></li></ul></div></td>
+      </tr><tr class="">
+        <td>Insulina Demo</td><td>L-D010</td>
+        <td>2027-04-10 <span class="small text-muted">(168 d)</span></td>
+        <td>Refrigerador 1</td><td class="text-end">4</td><td><span class="badge text-bg-warning">Cuarentena</span>
+
+</td>
+        <td><div class="dropdown"><button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Acción</button>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Enviar a cuarentena</a></li><li><a class="dropdown-item" href="#">Marcar retiro de mercado</a></li><li><a class="dropdown-item" href="#">Transferir</a></li></ul></div></td>
+      </tr><tr class="table-danger">
+        <td>Crema Hidratante Demo</td><td>L-B901</td>
+        <td>2026-10-01 <span class="small text-muted">(vencido)</span></td>
+        <td>Bodega</td><td class="text-end">2</td><td><span class="badge text-bg-danger">Vencido</span>
+</td>
+        <td><div class="dropdown"><button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Acción</button>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Enviar a cuarentena</a></li><li><a class="dropdown-item" href="#">Marcar retiro de mercado</a></li><li><a class="dropdown-item" href="#">Transferir</a></li></ul></div></td>
+      </tr><tr class="">
+        <td>Producto Controlado Demo</td><td>L-C077</td>
+        <td>2027-06-30 <span class="small text-muted">(249 d)</span></td>
+        <td>Gabinete controlados</td><td class="text-end">6</td><td><span class="badge text-bg-success">Disponible</span>
+
+</td>
+        <td><div class="dropdown"><button class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Acción</button>
+          <ul class="dropdown-menu"><li><a class="dropdown-item" href="#">Enviar a cuarentena</a></li><li><a class="dropdown-item" href="#">Marcar retiro de mercado</a></li><li><a class="dropdown-item" href="#">Transferir</a></li></ul></div></td>
+      </tr></tbody></table></div></div>
+  </div>
+  <div class="tab-pane fade" id="t-kardex">
+    <div class="alert alert-light border small"><i class="bi bi-lock"></i> Los movimientos no se editan ni se borran; las correcciones se registran como movimientos compensatorios.</div>
+    <div class="card shadow-sm"><table class="table mb-0"><thead class="table-light"><tr><th>Fecha</th><th>Tipo</th><th>Producto</th><th>Lote</th><th class="text-end">Cant.</th><th>Usuario</th><th>Referencia</th></tr></thead>
+      <tbody><tr><td>24-10-2026 09:12</td><td>Recepción</td><td>Paracetamol Demo 500 mg</td><td>L-A145</td><td class="text-end font-monospace">+30</td><td>Bodega Demo</td><td>REC-0012</td></tr><tr><td>24-10-2026 10:40</td><td>Venta</td><td>Ibuprofeno Demo 400 mg</td><td>L-B220</td><td class="text-end font-monospace">-2</td><td>Cajero Demo</td><td>V-000231</td></tr><tr><td>24-10-2026 11:05</td><td>Cuarentena</td><td>Insulina Demo</td><td>L-D010</td><td class="text-end font-monospace">0 (estado)</td><td>QF Demo</td><td>CUA-0003</td></tr><tr><td>24-10-2026 11:30</td><td>Ajuste (conteo)</td><td>Crema Hidratante Demo</td><td>L-B901</td><td class="text-end font-monospace">-1</td><td>Bodega Demo</td><td>CNT-0007</td></tr></tbody></table></div>
+  </div>
+  <div class="tab-pane fade" id="t-adjust">
+    <div class="card shadow-sm" style="max-width:560px"><div class="card-body">
+      <div class="mb-2"><label class="form-label small">Lote</label><select class="form-select"><option>Paracetamol Demo 500 mg · L-A101 (sistema: 12)</option><option>Paracetamol Demo 500 mg · L-A145 (sistema: 30)</option><option>Ibuprofeno Demo 400 mg · L-B220 (sistema: 3)</option><option>Amoxicilina Demo 500 mg · L-A330 (sistema: 18)</option><option>Insulina Demo · L-D010 (sistema: 4)</option><option>Crema Hidratante Demo · L-B901 (sistema: 2)</option><option>Producto Controlado Demo · L-C077 (sistema: 6)</option></select></div>
+      <div class="mb-2"><label class="form-label small">Cantidad contada</label><input type="number" class="form-control" value="11"></div>
+      <div class="mb-2"><label class="form-label small">Motivo (obligatorio)</label><select class="form-select"><option>Conteo físico</option><option>Merma / daño</option><option>Error de registro</option></select></div>
+      <div class="mb-3"><label class="form-label small">Observación</label><textarea class="form-control" rows="2"></textarea></div>
+      <div class="alert alert-warning small">Diferencia: <strong>−1</strong>. Requiere aprobación de un supervisor; quedará en auditoría.</div>
+      <button class="btn btn-primary">Enviar a aprobación</button>
+    </div></div>
+  </div>
+</div>
+</main>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
